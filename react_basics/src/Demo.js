@@ -13,7 +13,7 @@ export class Demo extends React.PureComponent {
         console.log("Render", this.state);
         return (
             <div>
-                <h1>Demo component </h1>
+                <h3>Demo component </h3>
                 {this.state.count === 5 ? <p>Hello from Mike</p> : null}
                 <button onClick={() => this.setState({no:1})}>change to 1</button>
                 <button onClick={() => this.setState({no:0})}>change to 0</button>

@@ -19,30 +19,18 @@ export class ProductList extends React.Component {
     }
 
     render() {
-        let image = "https://rukminim1.flixcart.com/image/800/960/jxf05u80/shoe/h/z/v/cg-284-9-campus-blu-sky-original-imafhvqmczxzayhx.jpeg?q=50";
-        const pList = [{
-            productId : 1001,
-            productName : "P-1",
-            productImage : image,
-            productPrice: "12",
-            productStock: false
-        }, 
-        {
-            productId : 1002,
-            productName : "P-2",
-            productImage : image,
-            productPrice: "13",
-            productStock: true
-        }];
-
         return (
             <div>
+            <h3>Product List</h3>
+            <div className="row">
                 {
                     this.state.pList.map(val=> <Product 
                         pData= {val} 
                         key={val.productId} 
                         code = {this.props.selectedCurrency}/>)
                 }
+            </div>
+            
             </div>
         );
     }

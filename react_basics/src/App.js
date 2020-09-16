@@ -12,13 +12,14 @@ render() {
    let currencyCode = this.state.currencyChange;
    return (
     <div className="App">
-      <Demo />
-      <Checkout />
-      <ProductList selectedCurrency={currencyCode}/>
       <Currency currencyChange={code=> {
         console.log("In App", code);
         this.setState({currencyChange: code});
         }} />
+      <Demo />
+      <Checkout />
+      <ProductList selectedCurrency={currencyCode}/>
+      
     </div>
   );
 }
