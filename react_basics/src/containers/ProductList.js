@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 export class ProductList extends React.Component {
     state = {pList:[]};
+    
     componentDidMount() {
         this.getData();
     }
@@ -21,16 +22,15 @@ export class ProductList extends React.Component {
     render() {
         return (
             <div>
-            <h3>Product List</h3>
-            <div className="row">
-                {
-                    this.state.pList.map(val=> <Product 
-                        pData= {val} 
-                        key={val.productId} 
-                        code = {this.props.selectedCurrency}/>)
-                }
-            </div>
-            
+                <h3>Product List</h3>
+                <div className="row">
+                    {
+                        this.state.pList.map(val=> <Product 
+                            pData= {val} 
+                            key={val.productId} 
+                            code = {this.props.selectedCurrency}/>)
+                    }
+                </div>
             </div>
         );
     }

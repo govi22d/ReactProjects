@@ -11,21 +11,17 @@ export class Checkout extends React.Component {
     render() {
         return (
             <div>
-            <h3>Checkout component</h3>    
-            <form onSubmit={(e) => this.submitData(e)}>
-                <label>Name</label>
-                <input 
-                    type="text" 
-                    onChange={
-                        (e)=> this.setState({name:e.target.value})
-                     }
-                />
+                <h3>Checkout component</h3>    
+                <form onSubmit={(e) => this.submitData(e)}>
+                    <label>Name</label>
+                    <input type="text" 
+                        onChange={(e)=> this.setState({name:e.target.value})} />
 
-                <label>Email</label>
-                <input type="email" ref={(r) => (this.emailRef = r)}></input>
+                    <label>Email</label>
+                    <input type="email" ref={(r) => (this.emailRef = r)}></input>
 
-                <button type="submit">Submit</button>
-            </form>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         );
     }
