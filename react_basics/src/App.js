@@ -8,6 +8,7 @@ import { ThemeContext } from './context';
 import { AppRouter } from './AppRouter';
 import {BrowserRouter} from 'react-router-dom';
 import { Header } from './containers/Header';
+import LoginButtons from './components/LoginButtons';
 
 class App extends React.Component {
 state = { theme:"light"};
@@ -24,7 +25,7 @@ render() {
           //   (code) => { this.setState({currencyChange: code});
           //     console.log(code); }} 
               />
-          
+          <LoginButtons></LoginButtons>
         </Header>
         
         {/* <Checkout />  */}

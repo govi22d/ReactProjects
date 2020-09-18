@@ -8,6 +8,7 @@ function UserReducer (storeData = initialState, action) {
         case UserActions.actionTypes.LOGIN_ERROR:
             return {error:action.error, user: null}
         default:
+            storeData = initialState;
             return storeData;
     }
 } 

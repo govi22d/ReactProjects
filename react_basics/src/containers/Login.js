@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Axios from 'axios';
 import {connect} from 'react-redux';
 import UserActions from '../store/actions/user-actions';
+import { Redirect } from 'react-router';
 
 class Login extends Component {
     state = {email:"", password:""};
@@ -27,6 +28,13 @@ class Login extends Component {
     }
 
     render () {
+        if (this.props.isLoggedIn) {
+            let lastPage = "/";
+            if(this.props.location.state && this.props.location.state.from) {
+                lastPage = this.props.location.state.from;
+            }
+            return <Redirect to={lastPage} />
+        }
         return (
             <form onSubmit={(e) => this.doLogin(e)}>
                 <small className="text-danger">{this.props.errorMessage}</small>

@@ -17,12 +17,12 @@ const loginError = (error) => {
     };
 }
 
-const logout = () => {
+const logOut = () => {
     return {
         type:actionTypes.LOGOUT
     };
 }
 
-const UserActions = {loginSuccess, loginError, logout, actionTypes};
+const UserActions = {loginSuccess, loginError, logOut, actionTypes};
 
 export default UserActions;
