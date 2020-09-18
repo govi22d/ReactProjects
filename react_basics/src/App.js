@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Demo } from './Demo';
-import { Currency } from './components/Currency';
+import Currency from './components/Currency';
 import { Checkout } from './containers/Checkout';
 import { ThemeSwitch } from './components/ThemeSwitch';
 import { ThemeContext } from './context';
@@ -10,17 +10,21 @@ import {BrowserRouter} from 'react-router-dom';
 import { Header } from './containers/Header';
 
 class App extends React.Component {
-state = {currencyChange:"INR", theme:"light"};
+state = { theme:"light"};
   
 render() {
-   let currencyCode = this.state.currencyChange;
+   //let currencyCode = this.state.currencyChange;
    return (
      <BrowserRouter>
       <div className="App">
         <Header>
           <ThemeSwitch changeTheme={(theme) => this.setState({theme})}/>
-          <Currency currencyChange={
-            code=> this.setState({currencyChange: code}) } />
+           <Currency 
+          //  currencyChange = {
+          //   (code) => { this.setState({currencyChange: code});
+          //     console.log(code); }} 
+              />
+          
         </Header>
         
         {/* <Checkout />  */}
